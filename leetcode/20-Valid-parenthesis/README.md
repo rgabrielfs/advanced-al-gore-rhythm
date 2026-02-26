@@ -1,61 +1,58 @@
-# Problema: Valid Parentheses
+# Problema: Min Stack
 
 Autor: **Nicolas Borges**
 Revisado por:
 
-Dada uma string s contendo apenas os caracteres '(', ')', '{', '}', '[' e ']', determine se a string de entrada é válida.
+Projete uma pilha que suporte push, pop, top e a recuperação do elemento mínimo em tempo constante.
 
-Uma string de entrada é válida se:
+Implemente a classe `MinStack`:
 
-1. Parênteses de abertura devem ser fechados pelo mesmo tipo de parêntese.
+* `MinStack()` inicializa o objeto da pilha.
 
-2. Parênteses de abertura devem ser fechados na ordem correta.
+* `void push(int val)` adiciona o elemento `val` ao topo da pilha.
 
-3. Todo parêntese de fechamento deve ter um parêntese de abertura correspondente do mesmo tipo.
+* `void pop()` remove o elemento no topo da pilha.
+
+* `int top()` retorna o elemento no topo da pilha.
+
+* `int getMin()` retorna o menor elemento presente na pilha.
+
+Você deve implementar uma solução com complexidade de tempo `O(1)` para cada função.
 
 # Exemplo:
 
 ## Primeiro:
 
-**Entrada:** s = "()"
+**Entrada:**
 
-**Saída:** true
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
 
+**Saída:**
 
-## Segundo:
+[null,null,null,null,-3,null,0,-2]
 
-**Entrada:** s = "()[]{}"
+**Explicação:**
 
-**Saída:** true
-
-
-## Terceiro:
-
-**Entrada:** s = "(]"
-
-**Saída:** false
-
-
-## Quarto:
-
-**Entrada:** s = "([])"
-
-**Saída:** true
-
-
-## Quinto:
-
-**Entrada:** s = "([)]"
-
-**Saída:** false
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin(); // retorna -3
+minStack.pop();
+minStack.top();    // retorna 0
+minStack.getMin(); // retorna -2
 
 # Restrições:
-* `1 <= s.length <= 10⁴`
-* `s` consiste apenas dos caracteres `'()[]{}'`.
+* `-2³¹ ≤ val ≤ 2³¹ - 1`
+
+Os métodos pop, top e getMin sempre serão chamados em pilhas não vazias.
+
+No máximo 3 × 10⁴ chamadas serão feitas aos métodos push, pop, top e getMin.
 
 # Como o LLM foi utilizado:
 
-Quando me faltava compreensão de como funcionava algo na línguagem TypeScript, pediria uma explicação sobre as funções e suas estruturas para fazer uso na programação de uma solução ao problema utilizando pilha.
+Quando me faltava compreensão de como funcionava algo na línguagem TypeScript, pediria uma explicação sobre as funções e suas estruturas para fazer uso na programação de uma solução.
 
 # Evidência
 
